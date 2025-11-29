@@ -7,7 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { margin:0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
-    header { background: linear-gradient(90deg, #002D5C, #00509E); color: #fff; text-align:center; padding:80px 20px; position: relative; overflow:hidden; }
+    header { position: relative; height: 100vh; color: #fff; text-align:center; overflow:hidden; }
+    header video { position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; }
+    header .overlay { position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0, 45, 92, 0.5); display:flex; flex-direction:column; justify-content:center; align-items:center; }
     header h1 { font-size:3em; margin:0; animation: fadeInDown 1.5s ease forwards; opacity:0; }
     header p { font-size:1.3em; animation: fadeInUp 1.5s ease forwards 0.5s; opacity:0; }
 
@@ -27,28 +29,29 @@
     .card:nth-child(3) { animation-delay:0.6s; }
     .card:nth-child(4) { animation-delay:0.8s; }
 
-    footer { background:#002D5C; color:white; text-align:center; padding:40px 20px; }
+    .contact-details { text-align:center; font-size:1.2em; background:#f0f8ff; padding:40px 20px; border-radius:10px; max-width:600px; margin:auto; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
 
-    form { display:flex; flex-direction:column; gap:15px; max-width:400px; margin:auto; }
-    input, textarea { padding:12px; border:1px solid #ccc; border-radius:5px; transition:0.3s; }
-    input:focus, textarea:focus { border-color:#00509E; outline:none; }
-    button { padding:15px; background:#00509E; color:white; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
-    button:hover { background:#002D5C; }
+    footer { background:#002D5C; color:white; text-align:center; padding:40px 20px; }
 
     /* Animations */
     @keyframes fadeInDown { from {opacity:0; transform:translateY(-50px);} to {opacity:1; transform:translateY(0);} }
     @keyframes fadeInUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
     @keyframes fadeInUpCard { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
 
-    /* Smooth scrolling */
     html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
 <header id="home">
-  <h1>Design Solutions</h1>
-  <p>Your Trusted Civil Engineering & Construction Partner</p>
+  <video autoplay muted loop playsinline>
+    <source src="hero-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay">
+    <h1>Design Solutions</h1>
+    <p>Your Trusted Civil Engineering & Construction Partner</p>
+  </div>
 </header>
 
 <nav>
@@ -84,13 +87,12 @@
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <form>
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="text" name="phone" placeholder="Phone" />
-    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <div class="contact-details">
+    <p><strong>Rahul</strong></p>
+    <p>Email: <a href="mailto:rkguptaxs@gmail.com">rkguptaxs@gmail.com</a></p>
+    <p>Phone: 67548902</p>
+    <p style="margin-top:15px; font-style:italic; color:#00509E;">Let's build the future together — innovative, safe, and sustainable engineering solutions tailored just for you!</p>
+  </div>
 </section>
 
 <footer>
