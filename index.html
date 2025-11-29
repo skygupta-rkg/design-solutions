@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design Solutions — Civil Engineering & Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Solutions — Civil Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family: Arial, sans-serif; }
-    header { background: #002D5C; color: white; padding: 60px 20px; text-align: center; }
-    header h1 { margin:0; font-size: 3em; }
-    nav { position: sticky; top:0; background: #fff; padding: 10px 20px; border-bottom: 1px solid #eee; }
-    nav a { margin: 0 15px; color: #002D5C; text-decoration: none; font-weight: bold; }
-    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    .services, .projects, .testimonials { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    footer { background: #002D5C; color: white; text-align: center; padding: 30px 20px; }
-    @media (max-width: 768px) {
-      .services, .projects, .testimonials { flex-direction: column; align-items: center; }
-      .card { width: 90%; }
-    }
+    body { margin:0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+    header { background: linear-gradient(90deg, #002D5C, #00509E); color: #fff; text-align:center; padding:80px 20px; position: relative; overflow:hidden; }
+    header h1 { font-size:3em; margin:0; animation: fadeInDown 1.5s ease forwards; opacity:0; }
+    header p { font-size:1.3em; animation: fadeInUp 1.5s ease forwards 0.5s; opacity:0; }
+
+    nav { position: sticky; top:0; background: #fff; padding: 15px 20px; border-bottom:1px solid #eee; display:flex; justify-content:center; gap:20px; z-index:100; }
+    nav a { text-decoration:none; font-weight:bold; color:#002D5C; position: relative; }
+    nav a::after { content:''; position:absolute; left:0; bottom:-5px; width:0; height:2px; background:#002D5C; transition:0.3s; }
+    nav a:hover::after { width:100%; }
+
+    section { padding:80px 20px; max-width:1200px; margin:auto; }
+    h2 { text-align:center; margin-bottom:40px; position: relative; }
+    h2::after { content:''; display:block; width:60px; height:4px; background:#00509E; margin:10px auto 0; border-radius:2px; }
+
+    .services, .projects, .testimonials { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+    .card { background:#fff; border-radius:10px; padding:20px; width:300px; box-shadow:0 8px 20px rgba(0,0,0,0.1); opacity:0; transform: translateY(30px); animation: fadeInUpCard 1s forwards; }
+    .card:nth-child(1) { animation-delay:0.2s; }
+    .card:nth-child(2) { animation-delay:0.4s; }
+    .card:nth-child(3) { animation-delay:0.6s; }
+    .card:nth-child(4) { animation-delay:0.8s; }
+
+    footer { background:#002D5C; color:white; text-align:center; padding:40px 20px; }
+
+    form { display:flex; flex-direction:column; gap:15px; max-width:400px; margin:auto; }
+    input, textarea { padding:12px; border:1px solid #ccc; border-radius:5px; transition:0.3s; }
+    input:focus, textarea:focus { border-color:#00509E; outline:none; }
+    button { padding:15px; background:#00509E; color:white; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+    button:hover { background:#002D5C; }
+
+    /* Animations */
+    @keyframes fadeInDown { from {opacity:0; transform:translateY(-50px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUpCard { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -36,16 +60,16 @@
 
 <section id="about">
   <h2>About Us</h2>
-  <p>We deliver quality civil engineering and construction services... [Write about your expertise, years of experience, values].</p>
+  <p style="text-align:center; max-width:800px; margin:auto;">We deliver high-quality civil engineering and construction services with a focus on innovation, durability, and client satisfaction. Our team has extensive experience in structural design, project management, and modern construction techniques.</p>
 </section>
 
 <section id="services">
   <h2>Our Services</h2>
   <div class="services">
     <div class="card"><h3>Structural Design & Analysis</h3><p>Safe and efficient building design.</p></div>
-    <div class="card"><h3>Building Construction</h3><p>Residential / Commercial / Industrial construction with quality materials.</p></div>
-    <div class="card"><h3>Project Management & Supervision</h3><p>Timely delivery with strict quality checks.</p></div>
-    <div class="card"><h3>Renovation & Interiors</h3><p>Modern interiors and renovation solutions.</p></div>
+    <div class="card"><h3>Building Construction</h3><p>Residential, commercial & industrial projects delivered with quality.</p></div>
+    <div class="card"><h3>Project Management</h3><p>Ensuring timely and cost-efficient project execution.</p></div>
+    <div class="card"><h3>Renovation & Interiors</h3><p>Modern interior solutions tailored to client needs.</p></div>
   </div>
 </section>
 
@@ -54,18 +78,18 @@
   <div class="projects">
     <div class="card"><img src="project1.jpg" alt="Project 1" style="width:100%; border-radius:5px;"><p>Project 1 Description</p></div>
     <div class="card"><img src="project2.jpg" alt="Project 2" style="width:100%; border-radius:5px;"><p>Project 2 Description</p></div>
-    <!-- Add more projects -->
+    <div class="card"><img src="project3.jpg" alt="Project 3" style="width:100%; border-radius:5px;"><p>Project 3 Description</p></div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <form style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px;">
+  <form>
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Email" required />
     <input type="text" name="phone" placeholder="Phone" />
     <textarea name="message" placeholder="Your Message" rows="5"></textarea>
-    <button type="submit" style="padding:12px; background:#002D5C; color:white; border:none; border-radius:5px; cursor:pointer;">Send Message</button>
+    <button type="submit">Send Message</button>
   </form>
 </section>
 
