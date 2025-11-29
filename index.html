@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design Solutions - Civil Engineering Works</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; }
-        header { background:#111; color:#fff; padding:40px; text-align:center; }
-        section { padding:40px 20px; max-width:1000px; margin:auto; }
-        h2 { text-align:center; margin-bottom:20px; }
-        .services, .testimonials { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
-        .card { border:1px solid #ddd; padding:20px; border-radius:10px; width:300px; }
-        footer { background:#111; color:#fff; text-align:center; padding:20px; }
-        video { width:100%; border-radius:10px; }
-        form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
-        input, textarea { padding:10px; border:1px solid #ccc; border-radius:5px; }
-        button { padding:12px; background:#111; color:white; border:none; border-radius:5px; cursor:pointer; }
-        button:hover { opacity:.8; }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Solutions — Civil Engineering & Construction</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header { background: #002D5C; color: white; padding: 60px 20px; text-align: center; }
+    header h1 { margin:0; font-size: 3em; }
+    nav { position: sticky; top:0; background: #fff; padding: 10px 20px; border-bottom: 1px solid #eee; }
+    nav a { margin: 0 15px; color: #002D5C; text-decoration: none; font-weight: bold; }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .services, .projects, .testimonials { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    footer { background: #002D5C; color: white; text-align: center; padding: 30px 20px; }
+    @media (max-width: 768px) {
+      .services, .projects, .testimonials { flex-direction: column; align-items: center; }
+      .card { width: 90%; }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <h1>Design Solutions</h1>
-    <h3>Quality Civil Engineering & Construction Services</h3>
+
+<header id="home">
+  <h1>Design Solutions</h1>
+  <p>Your Trusted Civil Engineering & Construction Partner</p>
 </header>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <section id="about">
-    <h2>About Us</h2>
-    <p>We are a professional civil engineering and construction services provider delivering modern, durable, and cost‑efficient solutions. With extensive experience in structural design, building planning, interior solutions, and on‑site project execution, we aim to bring every client’s vision into reality.</p>
+  <h2>About Us</h2>
+  <p>We deliver quality civil engineering and construction services... [Write about your expertise, years of experience, values].</p>
 </section>
 
 <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card"><h3>Building Planning & Design</h3><p>2D & 3D architectural planning for residential, commercial & industrial spaces.</p></div>
-        <div class="card"><h3>Structural Engineering</h3><p>Safe and reliable structural analysis and design using modern techniques.</p></div>
-        <div class="card"><h3>Site Construction & Supervision</h3><p>On‑site management ensuring high quality standards and timely completion.</p></div>
-        <div class="card"><h3>Interior Designing</h3><p>Modern and functional interior planning tailored to your lifestyle.</p></div>
-    </div>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Structural Design & Analysis</h3><p>Safe and efficient building design.</p></div>
+    <div class="card"><h3>Building Construction</h3><p>Residential / Commercial / Industrial construction with quality materials.</p></div>
+    <div class="card"><h3>Project Management & Supervision</h3><p>Timely delivery with strict quality checks.</p></div>
+    <div class="card"><h3>Renovation & Interiors</h3><p>Modern interiors and renovation solutions.</p></div>
+  </div>
 </section>
 
-<section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonials">
-        <div class="card"><p>“Exceptional professionalism and project delivery. Highly satisfied!”</p><b>– Client 1</b></div>
-        <div class="card"><p>“Creative design ideas and flawless execution.”</p><b>– Client 2</b></div>
-    </div>
-</section>
-
-<section id="video">
-    <h2>Project Showcase Video</h2>
-    <video controls>
-        <source src="project-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
+<section id="projects">
+  <h2>Our Projects</h2>
+  <div class="projects">
+    <div class="card"><img src="project1.jpg" alt="Project 1" style="width:100%; border-radius:5px;"><p>Project 1 Description</p></div>
+    <div class="card"><img src="project2.jpg" alt="Project 2" style="width:100%; border-radius:5px;"><p>Project 2 Description</p></div>
+    <!-- Add more projects -->
+  </div>
 </section>
 
 <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="text" placeholder="Phone Number" required />
-        <textarea placeholder="Your Message" rows="5"></textarea>
-        <button>Send Message</button>
-    </form>
+  <h2>Contact Us</h2>
+  <form style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:10px;">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+    <button type="submit" style="padding:12px; background:#002D5C; color:white; border:none; border-radius:5px; cursor:pointer;">Send Message</button>
+  </form>
 </section>
 
 <footer>
-    <p>© 2025 Design Solutions. All Rights Reserved.</p>
+  <p>© 2025 Design Solutions. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
